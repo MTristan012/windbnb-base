@@ -27,7 +27,7 @@
   <!-- Link de CSS -->
   <link rel="stylesheet" href="./css/styles.css">
 
-  
+
 
   <script src="./js/app.js" type="module" defer></script>
   <title>Document</title>
@@ -40,20 +40,35 @@
     </div>
 
     <article class="d-flex rounded-4 border border-light-subtle">
-      <a class="p-3 m-0 cursor-text btn">Add location</a>
-      <a class="p-3 m-0 border-start border-end border-light-subtle user-select-none btn text-body-tertiary" >Add guests</a>
+      <a class="p-3 m-0 cursor-text btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+        aria-controls="offcanvasTop">Add location</a>
+
+      <a class="p-3 m-0 border-start border-end border-light-subtle user-select-none btn text-body-tertiary">Add
+        guests</a>
+
       <a class:"btn" href="#">
         <!-- Icono Search de google Icons -->
         <span class="material-symbols-outlined text-danger p-3 pointer">
-        search
+          search
         </span>
       </a>
-      
     </article>
+
+    <!-- Toggle Top Canvas -->
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+      <div class="offcanvas-header">
+        <h6 class="offcanvas-title" id="offcanvasTopLabel">Edit your search</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        ...
+      </div>
+    </div>
+
   </header>
   <main>
     <div class="d-flex mt-5 justify-content-between">
-      <h1 class="fs-3">Stays in 
+      <h1 class="fs-3">Stays in
         <!-- Aquí va el lugar -->
         <span id="place"></span>
       </h1>
@@ -64,7 +79,9 @@
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
 
         <!-- Aqui van los cards, cada uno debe llevar la clase 'col' -->
-        
+
+
+
       </div>
     </section>
   </main>
