@@ -26,24 +26,29 @@ const generateCard = (card) => {
   <div class="img card-img-modified">
     <img class="w-100 rounded-4" src="${card.photo}" alt="${card.title}">
   </div>
-  <div class=" card-body d-flex justify-content-between">
-    
-    <p class="d-flex flex-column">
-      <span class="text-body-secondary">${
-        card.superHost ? `${card.type} ${card.beds ? ` . ${card.beds} beds`: ""}` : card.type
-      }</span>
-    </p>
-    <p>
+  <div class="card-body justify-content-between">
+    <div class="d-flex">
+      <span class="text-body-secondary">
+      ${
+        card.superHost
+          ? `${card.type} ${card.beds ? ` . ${card.beds} beds` : ""}`
+          : card.type
+      }
+      </span>
+      <span class="material-icons text-danger">
+        star
+      </span>
+      <span>
+        ${card.rating}
+      </span>
+    </div>
+    <div>
       <span class="fw-semibold">${card.title}</span>
-    </p>
+    </div>
   </div>
   `;
   return div;
 };
-
-const isSuperHost = (card) => {
-  
-}
 
 const manifesCard = (card) => {
   places.innerHTML = "";
