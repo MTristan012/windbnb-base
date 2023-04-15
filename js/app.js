@@ -4,7 +4,7 @@ import dom from "./dom.js";
 
 const datos = await data.getData()
 const cities = data.getCity(datos)
-const cardList = [...dom.$("#container").children]
+const cardList = [...dom.$("#container").children];
 let cardActive = 0
 
 dom.addCities(cities)
