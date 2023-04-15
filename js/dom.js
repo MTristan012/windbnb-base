@@ -21,22 +21,29 @@ const addCities = (cities) => {
 
 const generateCard = (card) => {
   const div = newE("div");
-  div.className = "card-img";
+  div.className = "card border border-0";
   div.innerHTML = `
   <div class="img card-img-modified">
-    <img class="w-100 h-100 rounded-4" src="${card.photo}" alt="${card.title}">
+    <img class="w-100 rounded-4" src="${card.photo}" alt="${card.title}">
   </div>
-  <div class="info d-flex justify-content-between mt-3">
+  <div class=" card-body d-flex justify-content-between">
+    
     <p class="d-flex flex-column">
-      <span class="fw-bold">${card.title}</span>
-      <span>${card.beds}</span>
+      <span class="text-body-secondary">${
+        card.superHost ? `${card.type} ${card.beds ? ` . ${card.beds} beds`: ""}` : card.type
+      }</span>
     </p>
-    <a href="#" id="${card.id}" onClick="console.log(this.id)">
-      <img class="click" src="./img/icons/bt_add_to_cart.svg" alt="add to cart">
-    </a>
+    <p>
+      <span class="fw-semibold">${card.title}</span>
+    </p>
+  </div>
   `;
   return div;
 };
+
+const isSuperHost = (card) => {
+  
+}
 
 const manifesCard = (card) => {
   places.innerHTML = "";
