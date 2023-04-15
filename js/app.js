@@ -8,11 +8,12 @@ const cardList = [...dom.$("#container").children]
 let cardActive = 0
 
 dom.addCities(cities)
+dom.manifesCard(datos)
 
 console.log(cities)
 
 cardList.forEach((categorie, index) => {
-    categorie.addEvenListener("click", () => {
+    categorie.addEventListener("click", () => {
         if(categorie.classList.contains("act-categorie")) return
         
         categorie.classList.add("act-categorie")
@@ -27,7 +28,7 @@ cardList.forEach((categorie, index) => {
 
         const filtered = filtro === "All" ? datos : data.filtrar(datos, filtro)
 
-        dom.manifesCard(datos)
+        dom.manifesCard(filtered)
     })
 
 })

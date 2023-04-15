@@ -29,7 +29,18 @@ const generateCard = (card) =>{
   div.innerHTML = `
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
 
-  </div>
+    <div class="img card-img-modified">
+      <img class="w-100 h-100 rounded-4" src="${card.photo}" alt="${card.title}">
+    </div>
+    <div class="info d-flex justify-content-between mt-3">
+    <p class="d-flex flex-column">
+      <span class="fw-bold">$${card.title}</span>
+      <span>${card.beds}</span>
+    </p>
+    <a href="#" id="${card.id}" onClick="console.log(this.id)">
+      <img class="click" src="./img/icons/bt_add_to_cart.svg" alt="add to cart">
+    </a>
+  </div> 
 
   `;
   return div
