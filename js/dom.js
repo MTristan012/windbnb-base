@@ -26,6 +26,22 @@ const addCities = (cities, data) => {
   });
 };
 
+const addCitiesB = (cities, data) => {
+  const location = $("#floatingSelectGrid");
+  console.log(data);
+  cities.forEach((city) => {
+    const div = newE("option");
+    div.innerHTML = `
+        <a class="p-3 m-0 cursor-text btn user-select-none d-flex align-items-center" type="button" id="${city}" hrfe:"#${city}">
+          <span>
+            ${city}, ${data[0].country}
+          <span>
+        </a>
+        `;
+    location.appendChild(div);
+  });
+};
+
 const generateCard = (card) => {
   const div = newE("div");
   div.className = "card border border-0";
@@ -86,4 +102,5 @@ export default {
   addCities,
   generateCard,
   manifesCard,
+  addCitiesB,
 };
