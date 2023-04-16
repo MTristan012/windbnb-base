@@ -66,24 +66,27 @@
       <div class="offcanvas-body rounded-4 border border-light-subtle">
         
         <div class="g-col-12">
-
-          <div class="form-floating">
-            <a  class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-              <option selected>All</option>
-              <label >Location</label>
-            </a>
-          </div>
-
-          <div class="form-floating">
-            <a  class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-            <label for="floatingGuests">Guests</label>
-            </a>
-          </div>
-
+          <p>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false"
+              aria-controls="multiCollapseExample1">Location</a>
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false"
+              aria-controls="multiCollapseExample1">Guest</a>
+          </p>
         </div>
-        <div id="location">
+        <div class="row">
+          <div class="col">
+            <div class="collapse multi-collapse" id="location">
+            </div>
+          </div>
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample2">
+              <div class="card card-body">
+                Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by
+                default but revealed when the user activates the relevant trigger.
+              </div>
+            </div>
+          </div>
         </div>
-
         <a class:"btn" href="#" type="submit">
           <!-- Icono Search de google Icons -->
           <span class="material-symbols-outlined text-danger p-3 pointer">

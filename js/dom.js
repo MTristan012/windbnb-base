@@ -30,7 +30,7 @@ const addCitiesB = (cities, data) => {
   const location = $("#floatingSelectGrid");
   console.log(data);
   cities.forEach((city) => {
-    const div = newE("option");
+    const div = newE("div");
     div.innerHTML = `
         <a class="p-3 m-0 cursor-text btn user-select-none d-flex align-items-center" type="button" id="${city}" hrfe:"#${city}">
           <span>
