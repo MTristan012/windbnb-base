@@ -57,54 +57,54 @@ const offCanvas = () => {
   const offCanvasBody = $("#offCanvasBody");
   const div = newE("div");
   div.innerHTML = `
-  <div class="g-col-12">
-          <div class="row mb-3">
-            <div class="col">
-              <a class="btn" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false"
-                aria-controls="location">Location</a>
+    <div class="g-col-12">
+      <div class="row mb-3">
+        <div class="col">
+          <a class="btn" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false"
+            aria-controls="location">Location</a>
+        </div>
+        <div class="col">
+          <a class="btn" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false"
+          aria-controls="guests">Guest</a>
+        </div>
+        <div class="col">
+          <a class="btn" href="#" type="submit">
+          <!-- Icono Search de google Icons -->
+            <span class="material-symbols-outlined text-danger p-3 pointer">
+              search
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="collapse multi-collapse" id="location">
+        </div>
+      </div>
+      <div class="col">
+        <div class="collapse multi-collapse" id="guests">
+          <div>
+            <span>Adults</span>
+            <span>Ages 13 or above</span>
+            <div>
+              <span class="minus" role="button" id="adultMinus">-</span>
+              <input placeholder="0" type="text" value="0" id="adults"/>
+              <span class="plus" role="button" id="adultPlus">+</span>
             </div>
-            <div class="col">
-              <a class="btn" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false"
-              aria-controls="guests">Guest</a>
-            </div>
-            <div class="col">
-              <a class="btn" href="#" type="submit">
-              <!-- Icono Search de google Icons -->
-                <span class="material-symbols-outlined text-danger p-3 pointer">
-                  search
-                </span>
-              </a>
+          </div>
+          <div>
+            <span>Children</span>
+            <span>Ages 2-12</span>
+            <div>
+              <span class="minus" role="button" id="childMinus">-</span>
+              <input placeholder="0" type="text" value="0" id="children"/>
+              <span class="plus" role="button" id="childPlus">+</span>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <div class="collapse multi-collapse" id="location">
-            </div>
-          </div>
-          <div class="col">
-            <div class="collapse multi-collapse" id="guests">
-              <div>
-                <span>Adults</span>
-                <span>Ages 13 or above</span>
-                <div>
-                  <span class="minus" role="button" id="adultMinus">-</span>
-                  <input placeholder="0" type="text" value="0" id="adults"/>
-                  <span class="plus" role="button" id="adultPlus">+</span>
-                </div>
-              </div>
-              <div>
-                <span>Children</span>
-                <span>Ages 2-12</span>
-                <div>
-                  <span class="minus" role="button" id="childMinus">-</span>
-                  <input placeholder="0" type="text" value="0" id="children"/>
-                  <span class="plus" role="button" id="childPlus">+</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
+    </div>
   `;
   offCanvasBody.appendChild(div);
 };
