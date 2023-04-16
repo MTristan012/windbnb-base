@@ -9,7 +9,6 @@ const places = $("#container");
 
 const addCities = (cities, data) => {
   const location = $("#location");
-  console.log(data);
   cities.forEach((city) => {
     const div = newE("div");
     div.innerHTML = `
