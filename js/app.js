@@ -4,8 +4,8 @@ import dom from "./dom.js";
 
 const datos = await data.getData()
 const cities = data.getCity(datos)
-const cardList = [...dom.$("#container").children];
-let cardActive = 0
+/*const cardList = [...dom.$("#container").children];
+let cardActive = 0*/
 
 dom.addCities(cities, datos)
 dom.manifesCard(datos)
@@ -14,7 +14,7 @@ data.childGuest(dom);
 
 console.log(cities)
 
-cardList.forEach((categorie, index) => {
+/*cardList.forEach((categorie, index) => {
     categorie.addEventListener("click", () => {
         if(categorie.classList.contains("act-categorie")) return
         
@@ -33,4 +33,4 @@ cardList.forEach((categorie, index) => {
         dom.manifesCard(filtered)
     })
 
-})
+})*/
