@@ -4,12 +4,16 @@ import dom from "./dom.js";
 
 const datos = await data.getData()
 const cities = data.getCity(datos)
-document.getElementById("floatingSelectGrid");
+const adultMinus = dom.$("#adultMinus")
+const adultPlus = dom.$("#adultPlus");
+const childMinus = dom.$("#childMinus");
+const childPlus = dom.$("#childPlus");
+const adults = dom.$("#adults")
+const children = dom.$("#children")
 const cardList = [...dom.$("#container").children];
 let cardActive = 0
 
 dom.addCities(cities, datos)
-dom.addGuests(cities, datos)
 dom.manifesCard(datos)
 
 console.log(cities)
@@ -34,3 +38,23 @@ cardList.forEach((categorie, index) => {
     })
 
 })
+
+adultMinus.addEventListener("click", function(){
+    if (adults.value > 0) {
+        adults.value = parseInt(adults.value) - 1
+  }
+})
+
+adultPlus.addEventListener("click", function(){
+  adults.value = parseInt(adults.value) + 1;
+});
+
+childMinus.addEventListener("click", function () {
+  if (children.value > 0) {
+    children.value = parseInt(children.value) - 1;
+  }
+});
+
+childPlus.addEventListener("click", function () {
+  children.value = parseInt(children.value) + 1;
+});
