@@ -76,7 +76,6 @@ const manifesCard = (card) => {
   places.innerHTML = "";
   card.forEach((element) => {
     const cards = generateCard(element);
-
     places.appendChild(cards);
   });
 };

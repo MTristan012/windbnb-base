@@ -20,8 +20,6 @@ const getCity = (data) => {
 
 const filtrar = (arr, filter) => {
   let filtered = arr.filtrar( elem => elem.category.name === filter);
-  console.log(filtered)
-
   return filtered
 }
 

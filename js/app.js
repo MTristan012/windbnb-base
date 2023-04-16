@@ -12,8 +12,6 @@ dom.manifesCard(datos)
 data.adultGuest(dom);
 data.childGuest(dom);
 
-console.log(cities)
-
 /*cardList.forEach((categorie, index) => {
     categorie.addEventListener("click", () => {
         if(categorie.classList.contains("act-categorie")) return
