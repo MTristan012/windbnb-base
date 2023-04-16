@@ -7,10 +7,12 @@ const cities = data.getCity(datos)
 /*const cardList = [...dom.$("#container").children];
 let cardActive = 0*/
 
-dom.addCities(cities, datos)
+dom.offCanvas();
 dom.manifesCard(datos)
 data.adultGuest(dom);
 data.childGuest(dom);
+dom.addCities(cities, datos);
+
 
 /*cardList.forEach((categorie, index) => {
     categorie.addEventListener("click", () => {
