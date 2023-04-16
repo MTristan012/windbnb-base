@@ -9,7 +9,7 @@ const places = $("#container");
 
 const addCities = (cities, data) => {
   const location = $("#location");
-  console.log(data)
+  console.log(data);
   cities.forEach((city) => {
     const div = newE("div");
     div.innerHTML = `
@@ -26,20 +26,29 @@ const addCities = (cities, data) => {
   });
 };
 
-const addCitiesB = (cities, data) => {
-  const location = $("#floatingSelectGrid");
+const addGuests = (cities, data) => {
+  const location = $("#guests");
   console.log(data);
-  cities.forEach((city) => {
-    const div = newE("div");
-    div.innerHTML = `
-        <a class="p-3 m-0 cursor-text btn user-select-none d-flex align-items-center" type="button" id="${city}" hrfe:"#${city}">
-          <span>
-            ${city}, ${data[0].country}
-          <span>
-        </a>
-        `;
-    location.appendChild(div);
-  });
+  const div = newE("div");
+  div.innerHTML = `
+    <div>
+      <span>Adults</span>
+      <span>Ages 13 or above</span>
+      <div class="number">
+      <span class="minus1">-</span>
+        <input type="text" value="0"/>
+      <span class="plus1">+</span>
+    </div>
+    <div>
+      <span>Children</span>
+      <span>Ages 2-12</span>
+      <div class="number">
+      <span class="minus2">-</span>
+        <input type="text" value="0"/>
+      <span class="plus2">+</span>
+    </div>
+  `;
+  location.appendChild(div);
 };
 
 const generateCard = (card) => {
@@ -102,5 +111,5 @@ export default {
   addCities,
   generateCard,
   manifesCard,
-  addCitiesB,
+  addGuests,
 };
