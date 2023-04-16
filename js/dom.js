@@ -24,7 +24,9 @@ const generateCard = (card) => {
   div.className = "card border border-0";
   div.innerHTML = `
   <div class="img card-img-modified">
-    <img class="w-100 rounded-4" src="${card.photo}" alt="${card.title}">
+    <img class="w-100 rounded-4" style="height: 14rem;" src="${
+      card.photo
+    }" alt="${card.title}">
   </div>
   <div class="card-body justify-content-between">
     <div class="d-flex justify-content-between ">
@@ -44,7 +46,7 @@ const generateCard = (card) => {
         </span>
       </div>
     </div>
-    <div>
+    <div class="d-flex justify-content-start">
       <span class="fw-semibold">${card.title}</span>
     </div>
   </div>
