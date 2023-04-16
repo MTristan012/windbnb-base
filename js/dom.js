@@ -13,7 +13,14 @@ const addCities = (cities) => {
   cities.forEach((city) => {
     const div = newE("div");
     div.innerHTML = `
-        <a class="p-3 m-0 cursor-text btn user-select-none" type="button" id="${city}" hrfe:"#${city}">${city}</a>
+        <a class="p-3 m-0 cursor-text btn user-select-none" type="button" id="${city}" hrfe:"#${city}">
+          <span class="material-icons">
+            location_on
+          </span>
+          <span>
+            ${city}
+          <span>
+        </a>
         `;
     location.appendChild(div);
   });
@@ -24,19 +31,30 @@ const generateCard = (card) => {
   div.className = "card border border-0";
   div.innerHTML = `
   <div class="img card-img-modified">
-    <img class="w-100 rounded-4" style="height: 14rem;" src="${
+    <img class="w-100 rounded-4" style="height: 16rem;" src="${
       card.photo
     }" alt="${card.title}">
   </div>
-  <div class="card-body justify-content-between">
-    <div class="d-flex justify-content-between ">
-      <span class="text-body-secondary">
-      ${
-        card.superHost
-          ? `${card.type} ${card.beds ? ` . ${card.beds} beds` : ""}`
-          : card.type
-      }
-      </span>
+  <div class="card-body justify-content-between lh-lg">
+    <div class="d-flex justify-content-between">
+      <div>
+        ${
+          card.superHost
+            ? `
+              <span class="border border-light-subtle rounded-pill fw-semibold text-body-secondary p-1" style="font-size:0.9rem text-center">
+                SUPER HOST
+              </span>
+              `
+            : ""
+        }
+        <span class="text-body-secondary">
+        ${
+          card.superHost
+            ? `${card.type} ${card.beds ? ` . ${card.beds} beds` : ""}`
+            : card.type
+        }
+        </span>
+      </div>
       <div class="d-flex align-items-center">
         <span class="material-icons text-danger">
           star
