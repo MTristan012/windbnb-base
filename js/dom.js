@@ -7,18 +7,18 @@ const $ = (selector) => document.querySelector(selector);
 const newE = (tag) => document.createElement(tag);
 const places = $("#container");
 
-const addCities = (cities) => {
+const addCities = (cities, data) => {
   const location = $("#location");
-
+  console.log(data)
   cities.forEach((city) => {
     const div = newE("div");
     div.innerHTML = `
-        <a class="p-3 m-0 cursor-text btn user-select-none" type="button" id="${city}" hrfe:"#${city}">
+        <a class="p-3 m-0 cursor-text btn user-select-none d-flex align-items-center" type="button" id="${city}" hrfe:"#${city}">
           <span class="material-icons">
             location_on
           </span>
           <span>
-            ${city}
+            ${city}, ${data[0].country}
           <span>
         </a>
         `;

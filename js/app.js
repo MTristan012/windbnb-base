@@ -7,7 +7,7 @@ const cities = data.getCity(datos)
 const cardList = [...dom.$("#container").children];
 let cardActive = 0
 
-dom.addCities(cities)
+dom.addCities(cities, datos)
 dom.manifesCard(datos)
 
 console.log(cities)
