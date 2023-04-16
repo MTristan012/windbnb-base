@@ -27,7 +27,7 @@ const generateCard = (card) => {
     <img class="w-100 rounded-4" src="${card.photo}" alt="${card.title}">
   </div>
   <div class="card-body justify-content-between">
-    <div class="d-flex">
+    <div class="d-flex justify-content-between ">
       <span class="text-body-secondary">
       ${
         card.superHost
@@ -35,12 +35,14 @@ const generateCard = (card) => {
           : card.type
       }
       </span>
-      <span class="material-icons text-danger">
-        star
-      </span>
-      <span>
-        ${card.rating}
-      </span>
+      <div class="d-flex align-items-center">
+        <span class="material-icons text-danger">
+          star
+        </span>
+        <span>
+          ${card.rating}
+        </span>
+      </div>
     </div>
     <div>
       <span class="fw-semibold">${card.title}</span>
