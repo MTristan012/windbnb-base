@@ -56,67 +56,64 @@ const generateCard = (card) => {
 const offCanvas = () => {
   const offCanvasBody = $("#offCanvasBody");
   const div = newE("div");
+  div.className = "g-col-12";
   div.innerHTML = `
-    <div class="g-col-12">
-      <div class="row mb-3 d-flex align-items-center">
-        <div class="col">
-          <form class="btn form-floating border border-0 p-5" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">
-            <input class="border border-0" value="Add Location" id="offCanvasLocation" disabled>
-            </input>
-            <label for="">Location</label>
-          </form>
+    <form class="row align-items-center">
+      <div class="col.12">
+        <div class="btn form-floating border border-1" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">
+          <p type="label" class="text-start m-0" for="">Location</p>
+          <input class="border border-0 fs-6" value="Add Location" id="offCanvasLocation" disabled>
+          </input>
         </div>
-        <div class="col">
-          <form class="btn form-floating border border-0 p-5" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">
-            <input class="border border-0" value="Add Guests" id="offCanvasGuests" disabled>
-            </input>
-            <label for="">Guests</label>
-          </form>
-        </div>
-        <div class="col">
-          <a class="btn" href="#" type="submit" id="search" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="location guests" aria-label="Close">
-          <!-- Icono Search de google Icons -->
-            <span class="material-symbols-outlined text-danger p-3 pointer">
-              search
-            </span>
-          </a>
+        <div class="btn form-floating border border-1" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">
+          <p type="label" class="text-start m-0" for="">Guests</p>
+          <input class="border border-0 " value="Add Guests" id="offCanvasGuests" disabled>
+          </input> 
         </div>
       </div>
-    </div>
-    <!-- Nota -->
-    <div class="row">
-      <div class="col">
-        <div class="collapse multi-collapse" id="location">
-
+      <!-- Nota -->
+      <div class="row">
+        <div class="col">
+          <div class="collapse multi-collapse" id="location">
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="collapse multi-collapse" id="guests">
-          <div class="">
-            <p  class="d-flex flex-column">
-              <span class="fw-semibold">Adults</span>
+        <div class="col">
+          <div class="collapse multi-collapse" id="guests">
+            <div class="">
+              <p class="d-flex flex-column">
+                <span class="fw-semibold">Adults</span>
                 <span class="text-body-secondary">Ages 13 or above</span>
-            </p>
-            <div class="grid d-flex align-items-center">
-              <span class="minus border col-1 d-flex justify-content-center" role="button" id="adultMinus">-</span>
-              <input class="border border-0 text-center col-2" placeholder="0" type="text" value="0" id="adults"/>
-              <span class="plus border col-1 d-flex justify-content-center" role="button" id="adultPlus">+</span>
+              </p>
+              <div class="grid d-flex align-items-center">
+                <span class="minus border col-1 d-flex justify-content-center" role="button" id="adultMinus">-</span>
+                <input class="border border-0 text-center col-2" placeholder="0" type="text" value="0" id="adults"/>
+                <span class="plus border col-1 d-flex justify-content-center" role="button" id="adultPlus">+</span>
+              </div>
             </div>
-          </div>
-          <div class="mt-4">
-            <p class="d-flex flex-column">
-              <span class="fw-semibold">Children</span>
-              <span class="text-body-secondary">Ages 2-12</span>
-            </p>
-            <div class="d-flex align-items-center">
-              <span class="minus border col-1 d-flex justify-content-center" role="button" id="childMinus">-</span>
-              <input class="border border-0 text-center col-2" placeholder="0" type="text" value="0" id="children"/>
-              <span class="plus border col-1 d-flex justify-content-center" role="button" id="childPlus">+</span>
+            <div class="mt-4">
+              <p class="d-flex flex-column">
+                <span class="fw-semibold">Children</span>
+                <span class="text-body-secondary">Ages 2-12</span>
+              </p>
+              <div class="grid d-flex align-items-center">
+                <span class="minus border col-1 d-flex justify-content-center" role="button" id="childMinus">-</span>
+                <input class="border border-0 text-center col-2" placeholder="0" type="text" value="0" id="children"/>
+                <span class="plus border col-1 d-flex justify-content-center" role="button" id="childPlus">+</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <!-- Nota -->
+      <div class="d-flex justify-content-center">
+        <a class="btn" href="#" type="submit" id="search" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="location guests" aria-label="Close">
+        <!-- Icono Search de google Icons -->
+          <span class="material-symbols-outlined text-danger p-3 pointer">
+            search
+          </span>
+        </a>
+      </div>
+    </form>
   `;
   offCanvasBody.appendChild(div);
 };
@@ -127,7 +124,7 @@ const addCities = (cities, data) => {
   cities.forEach((city) => {
     const div = newE("div");
     div.innerHTML = `
-        <a value="${a++}" class="p-3 m-0 cursor-text btn user-select-none d-flex align-items-center" type="button" id="${city}" hrfe:"#${city}">
+        <a value="${a++}" class="p-1 m-0 cursor-text btn user-select-none d-flex align-items-center" type="button" id="${city}" hrfe:"#${city}">
           <span class="material-icons">
             location_on
           </span>
@@ -299,7 +296,6 @@ const allFilter = (dom,datos) => {
     `;
   });
   
-
 };
 
 const specificFilter = (dom,datos) => {
