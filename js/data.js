@@ -18,25 +18,25 @@ const getCity = (data) => {
   return cities
 }
 
-const adultGuest = (dom) => {
+const addGuest = (dom) => {
   const adultMinus = dom.$("#adultMinus");
   const adultPlus = dom.$("#adultPlus");
   const adults = dom.$("#adults");
+  const childMinus = dom.$("#childMinus");
+  const childPlus = dom.$("#childPlus");
+  const children = dom.$("#children");
 
   adultMinus.addEventListener("click", function () {
     if (adults.value > 0) {
       adults.value = parseInt(adults.value) - 1;
     }
   });
+  
   adultPlus.addEventListener("click", function () {
-    adults.value = parseInt(adults.value) + 1;
+    if (adults.value < 10){
+      adults.value = parseInt(adults.value) + 1;
+    }
   });
-};
-
-const childGuest = (dom) => {
-  const childMinus = dom.$("#childMinus");
-  const childPlus = dom.$("#childPlus");
-  const children = dom.$("#children");
 
   childMinus.addEventListener("click", function () {
     if (children.value > 0) {
@@ -45,13 +45,15 @@ const childGuest = (dom) => {
   });
 
   childPlus.addEventListener("click", function () {
-    children.value = parseInt(children.value) + 1;
+    if (children.value < 10) {
+      children.value = parseInt(children.value) + 1;
+    }
   });
 };
+
 
 export default {
   getData,
   getCity,
-  adultGuest,
-  childGuest,
+  addGuest,
 }
