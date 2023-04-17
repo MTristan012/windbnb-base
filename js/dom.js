@@ -158,6 +158,7 @@ const allFilter = (dom,datos) => {
   const childMinus = dom.$("#childMinus");
   const childPlus = dom.$("#childPlus");
   const children = dom.$("#children");
+  const guestsB = dom.$("#guestsB")
   let town
 
   helsinki.addEventListener("click", function () {
@@ -168,7 +169,10 @@ const allFilter = (dom,datos) => {
     let filter = datos.filter((ciudad) => ciudad.city == town);
     stays.innerHTML = `${filter.length}+`;
     dom.manifesCard(filter);
+    guestsB.className = "text-body-tertiary";
+    guestsB.innerHTML = "Add Guests";
   });
+
   oulu.addEventListener("click", function () {
     town = oulu.id;
     place.innerHTML = town;
@@ -177,7 +181,10 @@ const allFilter = (dom,datos) => {
     let filter = datos.filter((ciudad) => ciudad.city == town);
     stays.innerHTML = `${filter.length}+`;
     dom.manifesCard(filter);
+    guestsB.className = "text-body-tertiary";
+    guestsB.innerHTML = "Add Guests";
   });
+
   turku.addEventListener("click", function () {
     town = turku.id;
     place.innerHTML = town;
@@ -186,7 +193,10 @@ const allFilter = (dom,datos) => {
     let filter = datos.filter((ciudad) => ciudad.city == town);
     stays.innerHTML = `${filter.length}+`;
     dom.manifesCard(filter);
+    guestsB.className = "text-body-tertiary";
+    guestsB.innerHTML = "Add Guests";
   });
+
   vaasa.addEventListener("click", function () {
     town = vaasa.id;
     place.innerHTML = town;
@@ -195,7 +205,10 @@ const allFilter = (dom,datos) => {
     let filter = datos.filter((ciudad) => ciudad.city == town);
     stays.innerHTML = `${filter.length}+`;
     dom.manifesCard(filter);
+    guestsB.className = "text-body-tertiary";
+    guestsB.innerHTML = "Add Guests";
   });
+
   adultMinus.addEventListener("click", function () {
     if (adults.value > 0) {
       adults.value = parseInt(adults.value) - 1;
@@ -203,6 +216,14 @@ const allFilter = (dom,datos) => {
     let guests = parseInt(adults.value) + parseInt(children.value);
     let filter = datos.filter((mGuests) => mGuests.maxGuests >= guests);
     dom.manifesCard(filter);
+    placeA.className = "text-body-tertiary";
+    placeA.innerHTML = "Add Location";
+    guestsB.className = "text-black";
+    guestsB.innerHTML = `
+    ${guests} guests
+    `
+    place.innerHTML = "Finland";
+    stays.innerHTML = `${filter.length}+`;
   });
 
   adultPlus.addEventListener("click", function () {
@@ -212,6 +233,14 @@ const allFilter = (dom,datos) => {
     let guests = parseInt(adults.value) + parseInt(children.value);
     let filter = datos.filter((mGuests) => mGuests.maxGuests >= guests);
     dom.manifesCard(filter);
+    placeA.className = "text-body-tertiary";
+    placeA.innerHTML = "Add Location";
+    guestsB.className = "text-black";
+    guestsB.innerHTML = `
+    ${guests} guests
+    `;
+    place.innerHTML = "Finland";
+    stays.innerHTML = `${filter.length}+`;
   });
 
   childMinus.addEventListener("click", function () {
@@ -221,6 +250,14 @@ const allFilter = (dom,datos) => {
     let guests = parseInt(adults.value) + parseInt(children.value);
     let filter = datos.filter((mGuests) => mGuests.maxGuests >= guests);
     dom.manifesCard(filter);
+    placeA.className = "text-body-tertiary";
+    place.AinnerHTML = "Add Location";
+    guestsB.className = "text-black";
+    guestsB.innerHTML = `
+    ${guests} guests
+    `;
+    place.innerHTML = "Finland";
+    stays.innerHTML = `${filter.length}+`;
   });
 
   childPlus.addEventListener("click", function () {
@@ -230,8 +267,17 @@ const allFilter = (dom,datos) => {
     let guests = parseInt(adults.value) + parseInt(children.value);
     let filter = datos.filter((mGuests) => mGuests.maxGuests >= guests);
     dom.manifesCard(filter);
+    placeA.className = "text-body-tertiary";
+    placeA.innerHTML = "Add Location";
+    guestsB.className = "text-black";
+    guestsB.innerHTML = `
+    ${guests} guests
+    `;
+    place.innerHTML = "Finland";
+    stays.innerHTML = `${filter.length}+`;
   });
   
+
 };
 
 export default {
