@@ -3,3 +3,9 @@
 font-family: 'Montserrat', sans-serif;
 font-family: 'Mulish', sans-serif;
 */
+
+@media (min-width: 768px) {
+    .h-75{
+        height: 50%!important;
+    }
+}

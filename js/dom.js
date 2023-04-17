@@ -58,7 +58,7 @@ const offCanvas = () => {
   const div = newE("div");
   div.innerHTML = `
     <div class="g-col-12">
-      <div class="row mb-3">
+      <div class="row mb-3 d-flex align-items-center">
         <div class="col">
           <a class="btn" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">Location</a>
         </div>
