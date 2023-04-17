@@ -18,22 +18,6 @@ const getCity = (data) => {
   return cities
 }
 
-const filtrar = (arr, filter) => {
-  let filtered = arr.filtrar( elem => elem.category.name === filter);
-  return filtered
-}
-
-const filterByCity = (arr, filtro) => {
-
-  let filtered = arr.filter( element => {
-    return element.title.toLowerCase().includes(filtro.toLowerCase()) || element.category.name.toLowerCase().includes(filtro.toLowerCase())
-  })
-
-  console.log(filtered)
-  return filtered
-
-}
-
 const adultGuest = (dom) => {
   const adultMinus = dom.$("#adultMinus");
   const adultPlus = dom.$("#adultPlus");
@@ -68,8 +52,6 @@ const childGuest = (dom) => {
 export default {
   getData,
   getCity,
-  filtrar,
-  filterByCity,
   adultGuest,
   childGuest,
 }

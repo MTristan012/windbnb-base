@@ -60,10 +60,14 @@ const offCanvas = () => {
     <div class="g-col-12">
       <div class="row mb-3 d-flex align-items-center">
         <div class="col">
-          <a class="btn" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">Location</a>
+          <a class="btn" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">
+            <label for="">Add Location</label>
+          </a>
         </div>
         <div class="col">
-          <a class="btn" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">Guest</a>
+          <a class="btn" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">
+            <label for="">Add Location</label>
+          </a>
         </div>
         <div class="col">
           <a class="btn" href="#" type="submit">
@@ -115,10 +119,11 @@ const offCanvas = () => {
 
 const addCities = (cities, data) => {
   const location = $("#location");
+  let a = 1
   cities.forEach((city) => {
     const div = newE("div");
     div.innerHTML = `
-        <a class="p-3 m-0 cursor-text btn user-select-none d-flex align-items-center" type="button" id="${city}" hrfe:"#${city}">
+        <a value="${a++}" class="p-3 m-0 cursor-text btn user-select-none d-flex align-items-center" type="button" id="${city}" hrfe:"#${city}">
           <span class="material-icons">
             location_on
           </span>
@@ -139,10 +144,22 @@ const manifesCard = (card) => {
   });
 };
 
+const locationSelected = (dom) => {
+  const helsinki = dom.$("#Helsinki");
+  const oulu = dom.$("#Oulu");
+  const turku = dom.$("#Turku");
+  const vaasa = dom.$("#Vaasa");
+
+  helsinki.addEventListener("click", function () {
+    
+  });
+};
+
 export default {
   $,
   addCities,
   generateCard,
   manifesCard,
   offCanvas,
+  locationSelected,
 };
