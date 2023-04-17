@@ -14,7 +14,6 @@ data.childGuest(dom);
 dom.addCities(cities, datos);
 dom.locationSelected(dom, datos)
 
-
 /*cardList.forEach((categorie, index) => {
     categorie.addEventListener("click", () => {
         if(categorie.classList.contains("act-categorie")) return

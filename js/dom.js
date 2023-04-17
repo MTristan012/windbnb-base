@@ -152,32 +152,45 @@ const locationSelected = (dom,datos) => {
   const place = dom.$("#place");
   const placeA = dom.$("#placeA")
   const stays = dom.$("#stays");
-  let city
+  let town
 
   helsinki.addEventListener("click", function () {
-    city = helsinki.id
-    place.innerHTML = city;
+    town = helsinki.id
+    place.innerHTML = town;
     placeA.className = "text-black"
-    placeA.innerHTML = `${city}, Finlad`;
+    placeA.innerHTML = `${town}, Finlad`;
+    let filter = datos.filter((ciudad) => (ciudad.city == town));
+    stays.innerHTML = `${filter.length}+`
+    dom.manifesCard(filter)
   });
   oulu.addEventListener("click", function () {
-    city = oulu.id
-    place.innerHTML = city;
+    town = oulu.id
+    place.innerHTML = town;
     placeA.className = "text-black";
-    placeA.innerHTML = `${city}, Finlad`;
+    placeA.innerHTML = `${town}, Finlad`;
+    let filter = datos.filter((ciudad) => (ciudad.city == town));
+    stays.innerHTML = `${filter.length}+`;
+    dom.manifesCard(filter);
   });
   turku.addEventListener("click", function () {
-    city = turku.id
-    place.innerHTML = city;
+    town = turku.id
+    place.innerHTML = town;
     placeA.className = "text-black";
-    placeA.innerHTML = `${city}, Finlad`;
+    placeA.innerHTML = `${town}, Finlad`;
+    let filter = datos.filter((ciudad) => ciudad.city == town);
+    stays.innerHTML = `${filter.length}+`;
+    dom.manifesCard(filter);
   });
   vaasa.addEventListener("click", function () {
-    city = vaasa.id
-    place.innerHTML = city;
+    town = vaasa.id
+    place.innerHTML = town;
     placeA.className = "text-black";
-    placeA.innerHTML = `${city}, Finlad`;
+    placeA.innerHTML = `${town}, Finlad`;
+    let filter = datos.filter((ciudad) => ciudad.city == town);
+    stays.innerHTML = `${filter.length}+`;
+    dom.manifesCard(filter);
   });
+  
 };
 
 export default {
