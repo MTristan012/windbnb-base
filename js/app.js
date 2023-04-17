@@ -12,6 +12,7 @@ dom.manifesCard(datos)
 data.adultGuest(dom);
 data.childGuest(dom);
 dom.addCities(cities, datos);
+dom.locationSelected(dom, datos)
 
 
 /*cardList.forEach((categorie, index) => {

@@ -66,7 +66,7 @@ const offCanvas = () => {
         </div>
         <div class="col">
           <a class="btn" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">
-            <label for="">Add Location</label>
+            <label for="">Add Guests</label>
           </a>
         </div>
         <div class="col">
@@ -144,14 +144,39 @@ const manifesCard = (card) => {
   });
 };
 
-const locationSelected = (dom) => {
+const locationSelected = (dom,datos) => {
   const helsinki = dom.$("#Helsinki");
   const oulu = dom.$("#Oulu");
   const turku = dom.$("#Turku");
   const vaasa = dom.$("#Vaasa");
+  const place = dom.$("#place");
+  const placeA = dom.$("#placeA")
+  const stays = dom.$("#stays");
+  let city
 
   helsinki.addEventListener("click", function () {
-    
+    city = helsinki.id
+    place.innerHTML = city;
+    placeA.className = "text-black"
+    placeA.innerHTML = `${city}, Finlad`;
+  });
+  oulu.addEventListener("click", function () {
+    city = oulu.id
+    place.innerHTML = city;
+    placeA.className = "text-black";
+    placeA.innerHTML = `${city}, Finlad`;
+  });
+  turku.addEventListener("click", function () {
+    city = turku.id
+    place.innerHTML = city;
+    placeA.className = "text-black";
+    placeA.innerHTML = `${city}, Finlad`;
+  });
+  vaasa.addEventListener("click", function () {
+    city = vaasa.id
+    place.innerHTML = city;
+    placeA.className = "text-black";
+    placeA.innerHTML = `${city}, Finlad`;
   });
 };
 
