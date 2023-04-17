@@ -74,7 +74,7 @@ const offCanvas = () => {
           </form>
         </div>
         <div class="col">
-          <a class="btn" href="#" type="submit" id="search">
+          <a class="btn" href="#" type="submit" id="search" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="location guests" aria-label="Close">
           <!-- Icono Search de google Icons -->
             <span class="material-symbols-outlined text-danger p-3 pointer">
               search
@@ -316,15 +316,22 @@ const specificFilter = (dom,datos) => {
   search.addEventListener("click", function(){
     let guests = parseInt(adults.value) + parseInt(children.value);
     let location = offCanvasLocation.value.split(" ")
-    location = location[0].slice(0,-1)
+    let placeSelected = location[0].slice(0,-1)
     let filter = datos.filter(
-      (filtrado) => (filtrado.city == location) && (filtrado.maxGuests >= guests)
+      (filtrado) =>
+        filtrado.city == placeSelected && filtrado.maxGuests >= guests
     );
     dom.manifesCard(filter);
     stays.innerHTML = `${filter.length}+`;
     placeA.className = "text-black";
-    placeA.innerHTML = `${location}, Finlad`;
-    place.innerHTML = location;
+    console.log(placeSelected);
+    if ((guests == 0)&&(offCanvasLocation.value == "Add Location")){
+      place.innerHTML = "Finland";
+      placeA.innerHTML = `Finlad`;
+    }else{
+      place.innerHTML = placeSelected;
+      placeA.innerHTML = `${placeSelected}, Finlad`;
+    }
     guestsB.className = "text-black";
     guestsB.innerHTML = `
     ${guests} guests
