@@ -18,7 +18,7 @@ const getCity = (data) => {
   return cities
 }
 
-const addGuest = (dom,datos) => {
+/*const addGuest = (dom,datos) => {
   const adultMinus = dom.$("#adultMinus");
   const adultPlus = dom.$("#adultPlus");
   const adults = dom.$("#adults");
@@ -61,11 +61,10 @@ const addGuest = (dom,datos) => {
     let filter = datos.filter((mGuests) => mGuests.maxGuests >= guests);
     dom.manifesCard(filter);
   });
-};
+};*/
 
 
 export default {
   getData,
   getCity,
-  addGuest,
 }

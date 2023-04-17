@@ -6,7 +6,7 @@ const cities = data.getCity(datos)
 
 dom.offCanvas();
 dom.manifesCard(datos)
-data.addGuest(dom,datos);
+/*data.addGuest(dom,datos);*/
 dom.addCities(cities, datos);
-dom.locationSelected(dom, datos)
+dom.allFilter(dom, datos)
 

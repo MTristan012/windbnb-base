@@ -144,7 +144,7 @@ const manifesCard = (card) => {
   });
 };
 
-const locationSelected = (dom,datos) => {
+const allFilter = (dom,datos) => {
   const helsinki = dom.$("#Helsinki");
   const oulu = dom.$("#Oulu");
   const turku = dom.$("#Turku");
@@ -152,28 +152,34 @@ const locationSelected = (dom,datos) => {
   const place = dom.$("#place");
   const placeA = dom.$("#placeA")
   const stays = dom.$("#stays");
+  const adultMinus = dom.$("#adultMinus");
+  const adultPlus = dom.$("#adultPlus");
+  const adults = dom.$("#adults");
+  const childMinus = dom.$("#childMinus");
+  const childPlus = dom.$("#childPlus");
+  const children = dom.$("#children");
   let town
 
   helsinki.addEventListener("click", function () {
-    town = helsinki.id
-    place.innerHTML = town;
-    placeA.className = "text-black"
-    placeA.innerHTML = `${town}, Finlad`;
-    let filter = datos.filter((ciudad) => (ciudad.city == town));
-    stays.innerHTML = `${filter.length}+`
-    dom.manifesCard(filter)
-  });
-  oulu.addEventListener("click", function () {
-    town = oulu.id
+    town = helsinki.id;
     place.innerHTML = town;
     placeA.className = "text-black";
     placeA.innerHTML = `${town}, Finlad`;
-    let filter = datos.filter((ciudad) => (ciudad.city == town));
+    let filter = datos.filter((ciudad) => ciudad.city == town);
+    stays.innerHTML = `${filter.length}+`;
+    dom.manifesCard(filter);
+  });
+  oulu.addEventListener("click", function () {
+    town = oulu.id;
+    place.innerHTML = town;
+    placeA.className = "text-black";
+    placeA.innerHTML = `${town}, Finlad`;
+    let filter = datos.filter((ciudad) => ciudad.city == town);
     stays.innerHTML = `${filter.length}+`;
     dom.manifesCard(filter);
   });
   turku.addEventListener("click", function () {
-    town = turku.id
+    town = turku.id;
     place.innerHTML = town;
     placeA.className = "text-black";
     placeA.innerHTML = `${town}, Finlad`;
@@ -182,12 +188,47 @@ const locationSelected = (dom,datos) => {
     dom.manifesCard(filter);
   });
   vaasa.addEventListener("click", function () {
-    town = vaasa.id
+    town = vaasa.id;
     place.innerHTML = town;
     placeA.className = "text-black";
     placeA.innerHTML = `${town}, Finlad`;
     let filter = datos.filter((ciudad) => ciudad.city == town);
     stays.innerHTML = `${filter.length}+`;
+    dom.manifesCard(filter);
+  });
+  adultMinus.addEventListener("click", function () {
+    if (adults.value > 0) {
+      adults.value = parseInt(adults.value) - 1;
+    }
+    let guests = parseInt(adults.value) + parseInt(children.value);
+    let filter = datos.filter((mGuests) => mGuests.maxGuests >= guests);
+    dom.manifesCard(filter);
+  });
+
+  adultPlus.addEventListener("click", function () {
+    if (adults.value < 10 - parseInt(children.value)) {
+      adults.value = parseInt(adults.value) + 1;
+    }
+    let guests = parseInt(adults.value) + parseInt(children.value);
+    let filter = datos.filter((mGuests) => mGuests.maxGuests >= guests);
+    dom.manifesCard(filter);
+  });
+
+  childMinus.addEventListener("click", function () {
+    if (children.value > 0) {
+      children.value = parseInt(children.value) - 1;
+    }
+    let guests = parseInt(adults.value) + parseInt(children.value);
+    let filter = datos.filter((mGuests) => mGuests.maxGuests >= guests);
+    dom.manifesCard(filter);
+  });
+
+  childPlus.addEventListener("click", function () {
+    if (children.value < 10 - parseInt(adults.value)) {
+      children.value = parseInt(children.value) + 1;
+    }
+    let guests = parseInt(adults.value) + parseInt(children.value);
+    let filter = datos.filter((mGuests) => mGuests.maxGuests >= guests);
     dom.manifesCard(filter);
   });
   
@@ -199,5 +240,5 @@ export default {
   generateCard,
   manifesCard,
   offCanvas,
-  locationSelected,
+  allFilter,
 };
