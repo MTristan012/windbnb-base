@@ -9,4 +9,5 @@ dom.manifesCard(datos)
 /*data.addGuest(dom,datos);*/
 dom.addCities(cities, datos);
 dom.allFilter(dom, datos)
+dom.specificFilter(dom, datos);
 

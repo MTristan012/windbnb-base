@@ -60,17 +60,21 @@ const offCanvas = () => {
     <div class="g-col-12">
       <div class="row mb-3 d-flex align-items-center">
         <div class="col">
-          <a class="btn" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">
-            <label for="">Add Location</label>
-          </a>
+          <form class="btn form-floating border border-0 p-5" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">
+            <input class="border border-0" value="Add Location" id="offCanvasLocation" disabled>
+            </input>
+            <label for="">Location</label>
+          </form>
         </div>
         <div class="col">
-          <a class="btn" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">
-            <label for="">Add Guests</label>
-          </a>
+          <form class="btn form-floating border border-0 p-5" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">
+            <input class="border border-0" value="Add Guests" id="offCanvasGuests" disabled>
+            </input>
+            <label for="">Guests</label>
+          </form>
         </div>
         <div class="col">
-          <a class="btn" href="#" type="submit">
+          <a class="btn" href="#" type="submit" id="search">
           <!-- Icono Search de google Icons -->
             <span class="material-symbols-outlined text-danger p-3 pointer">
               search
@@ -159,6 +163,8 @@ const allFilter = (dom,datos) => {
   const childPlus = dom.$("#childPlus");
   const children = dom.$("#children");
   const guestsB = dom.$("#guestsB")
+  const offCanvasLocation = dom.$("#offCanvasLocation")
+  const offCanvasGuests = dom.$("#offCanvasGuests");
   let town
 
   helsinki.addEventListener("click", function () {
@@ -171,6 +177,7 @@ const allFilter = (dom,datos) => {
     dom.manifesCard(filter);
     guestsB.className = "text-body-tertiary";
     guestsB.innerHTML = "Add Guests";
+    offCanvasLocation.value = `${town}, Finlad`;
   });
 
   oulu.addEventListener("click", function () {
@@ -183,6 +190,7 @@ const allFilter = (dom,datos) => {
     dom.manifesCard(filter);
     guestsB.className = "text-body-tertiary";
     guestsB.innerHTML = "Add Guests";
+    offCanvasLocation.value = `${town}, Finlad`;
   });
 
   turku.addEventListener("click", function () {
@@ -195,6 +203,7 @@ const allFilter = (dom,datos) => {
     dom.manifesCard(filter);
     guestsB.className = "text-body-tertiary";
     guestsB.innerHTML = "Add Guests";
+    offCanvasLocation.value = `${town}, Finlad`;
   });
 
   vaasa.addEventListener("click", function () {
@@ -207,6 +216,7 @@ const allFilter = (dom,datos) => {
     dom.manifesCard(filter);
     guestsB.className = "text-body-tertiary";
     guestsB.innerHTML = "Add Guests";
+    offCanvasLocation.value = `${town}, Finlad`;
   });
 
   adultMinus.addEventListener("click", function () {
@@ -224,6 +234,9 @@ const allFilter = (dom,datos) => {
     `
     place.innerHTML = "Finland";
     stays.innerHTML = `${filter.length}+`;
+    offCanvasGuests.value = `
+    ${guests} guests
+    `;
   });
 
   adultPlus.addEventListener("click", function () {
@@ -241,6 +254,9 @@ const allFilter = (dom,datos) => {
     `;
     place.innerHTML = "Finland";
     stays.innerHTML = `${filter.length}+`;
+    offCanvasGuests.value = `
+    ${guests} guests
+    `;
   });
 
   childMinus.addEventListener("click", function () {
@@ -258,6 +274,9 @@ const allFilter = (dom,datos) => {
     `;
     place.innerHTML = "Finland";
     stays.innerHTML = `${filter.length}+`;
+    offCanvasGuests.value = `
+    ${guests} guests
+    `;
   });
 
   childPlus.addEventListener("click", function () {
@@ -275,10 +294,45 @@ const allFilter = (dom,datos) => {
     `;
     place.innerHTML = "Finland";
     stays.innerHTML = `${filter.length}+`;
+    offCanvasGuests.value = `
+    ${guests} guests
+    `;
   });
   
 
 };
+
+const specificFilter = (dom,datos) => {
+  const adults = dom.$("#adults");
+  const children = dom.$("#children");
+  const offCanvasLocation = dom.$("#offCanvasLocation");
+  const search = dom.$("#search");
+  const place = dom.$("#place");
+  const placeA = dom.$("#placeA");
+  const guestsB = dom.$("#guestsB");
+  const stays = dom.$("#stays");
+  
+
+  search.addEventListener("click", function(){
+    let guests = parseInt(adults.value) + parseInt(children.value);
+    let location = offCanvasLocation.value.split(" ")
+    location = location[0].slice(0,-1)
+    let filter = datos.filter(
+      (filtrado) => (filtrado.city == location) && (filtrado.maxGuests >= guests)
+    );
+    dom.manifesCard(filter);
+    stays.innerHTML = `${filter.length}+`;
+    placeA.className = "text-black";
+    placeA.innerHTML = `${location}, Finlad`;
+    place.innerHTML = location;
+    guestsB.className = "text-black";
+    guestsB.innerHTML = `
+    ${guests} guests
+    `;
+  })
+  
+
+}
 
 export default {
   $,
@@ -287,4 +341,5 @@ export default {
   manifesCard,
   offCanvas,
   allFilter,
+  specificFilter,
 };
