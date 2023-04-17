@@ -9,10 +9,10 @@ const places = $("#container");
 
 const generateCard = (card) => {
   const div = newE("div");
-  div.className = "card border border-0";
+  div.className = "card border border-0 mt-4";
   div.innerHTML = `
   <div class="img card-img-modified">
-    <img class="w-100 rounded-4" style="height: 16rem;" src="${
+    <img class="w-100 rounded-4 object-fit-cover" style="height: 16rem;" src="${
       card.photo
     }" alt="${card.title}">
   </div>
@@ -28,7 +28,7 @@ const generateCard = (card) => {
               `
             : ""
         }
-        <span class="text-body-secondary">
+        <span class="text-body-secondary p-2">
         ${
           card.superHost
             ? `${card.type} ${card.beds ? ` . ${card.beds} beds` : ""}`
@@ -60,12 +60,10 @@ const offCanvas = () => {
     <div class="g-col-12">
       <div class="row mb-3">
         <div class="col">
-          <a class="btn" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false"
-            aria-controls="location">Location</a>
+          <a class="btn" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">Location</a>
         </div>
         <div class="col">
-          <a class="btn" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false"
-          aria-controls="guests">Guest</a>
+          <a class="btn" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">Guest</a>
         </div>
         <div class="col">
           <a class="btn" href="#" type="submit">
@@ -77,29 +75,35 @@ const offCanvas = () => {
         </div>
       </div>
     </div>
+    <!-- Nota -->
     <div class="row">
       <div class="col">
         <div class="collapse multi-collapse" id="location">
+
         </div>
       </div>
       <div class="col">
         <div class="collapse multi-collapse" id="guests">
-          <div>
-            <span>Adults</span>
-            <span>Ages 13 or above</span>
-            <div>
-              <span class="minus" role="button" id="adultMinus">-</span>
-              <input placeholder="0" type="text" value="0" id="adults"/>
-              <span class="plus" role="button" id="adultPlus">+</span>
+          <div class="">
+            <p  class="d-flex flex-column">
+              <span class="fw-semibold">Adults</span>
+                <span class="text-body-secondary">Ages 13 or above</span>
+            </p>
+            <div class="grid d-flex align-items-center">
+              <span class="minus border col-1 d-flex justify-content-center" role="button" id="adultMinus">-</span>
+              <input class="border border-0 text-center col-2" placeholder="0" type="text" value="0" id="adults"/>
+              <span class="plus border col-1 d-flex justify-content-center" role="button" id="adultPlus">+</span>
             </div>
           </div>
-          <div>
-            <span>Children</span>
-            <span>Ages 2-12</span>
-            <div>
-              <span class="minus" role="button" id="childMinus">-</span>
-              <input placeholder="0" type="text" value="0" id="children"/>
-              <span class="plus" role="button" id="childPlus">+</span>
+          <div class="mt-4">
+            <p class="d-flex flex-column">
+              <span class="fw-semibold">Children</span>
+              <span class="text-body-secondary">Ages 2-12</span>
+            </p>
+            <div class="d-flex align-items-center">
+              <span class="minus border col-1 d-flex justify-content-center" role="button" id="childMinus">-</span>
+              <input class="border border-0 text-center col-2" placeholder="0" type="text" value="0" id="children"/>
+              <span class="plus border col-1 d-flex justify-content-center" role="button" id="childPlus">+</span>
             </div>
           </div>
         </div>
