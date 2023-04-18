@@ -59,25 +59,25 @@ const offCanvas = () => {
   div.className = "container";
   div.innerHTML = `
     <form class="row align-items-center">
-      <div class="col.12">
-        <div class="btn form-floating border border-1" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">
+      <div class="col-md-6 d-flex justify-content-between">
+        <div class="btn form-floating border border-1 col-12 col-md-6" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">
           <p type="label" class="text-start m-0" for="">Location</p>
-          <input class="border border-0 fs-6" value="Add Location" id="offCanvasLocation" disabled>
+          <input class="border border-0 fs-6 " value="Add Location" id="offCanvasLocation" disabled>
           </input>
         </div>
-        <div class="btn form-floating border border-1" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">
+        <div class="btn form-floating border border-1 col-12 col-md-6" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">
           <p type="label" class="text-start m-0" for="">Guests</p>
-          <input class="border border-0 " value="Add Guests" id="offCanvasGuests" disabled>
+          <input class="border border-0 fs-6 pe-5" value="Add Guests" id="offCanvasGuests" disabled>
           </input> 
         </div>
       </div>
       <!-- Nota -->
       <div class="row">
-        <div class="col">
+        <div class="col p-2">
           <div class="collapse multi-collapse" id="location">
           </div>
         </div>
-        <div class="col">
+        <div class="col p-2">
           <div class="collapse multi-collapse" id="guests">
             <div class="">
               <p class="d-flex flex-column">
@@ -105,7 +105,7 @@ const offCanvas = () => {
         </div>
       </div>
       <!-- Nota -->
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center col-md-4">
         <a class="btn btn-danger" href="#" type="submit" id="search" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="location guests" aria-label="Close">
         <!-- Icono Search de google Icons -->
           <span class="material-symbols-outlined pointer">
