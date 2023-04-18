@@ -4,8 +4,23 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Mulish', sans-serif;
 */
 
+.div_0{
+    display: grid;
+}
+
+.container.form{
+    display: grid;
+}
+
 @media (min-width: 768px) {
     .h-75{
         height: 50%!important;
+    }
+    .div_0{
+        grid-template-rows: repeat(3, 1fr)!important;
+    }
+    .div_2 {
+        grid-row-start: 3!important;
+        grid-row-end: 4!important;
     }
 }

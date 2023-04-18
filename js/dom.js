@@ -58,8 +58,9 @@ const offCanvas = () => {
   const div = newE("div");
   div.className = "container";
   div.innerHTML = `
-    <form class="row align-items-center">
-      <div class="col-md-6 d-flex justify-content-between">
+    <form class=" align-items-center div_0">
+      <!-- Nota -->
+      <div class="col-md-6 justify-content-between div_1">
         <div class="btn form-floating border border-1 col-12 col-md-6" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">
           <p type="label" class="text-start m-0" for="">Location</p>
           <input class="border border-0 fs-6 " value="Add Location" id="offCanvasLocation" disabled>
@@ -72,7 +73,7 @@ const offCanvas = () => {
         </div>
       </div>
       <!-- Nota -->
-      <div class="row">
+      <div class="row div_2">
         <div class="col p-2">
           <div class="collapse multi-collapse" id="location">
           </div>
@@ -105,7 +106,7 @@ const offCanvas = () => {
         </div>
       </div>
       <!-- Nota -->
-      <div class="d-flex justify-content-center col-md-4">
+      <div class="d-flex justify-content-center col-md-4 div_3">
         <a class="btn btn-danger" href="#" type="submit" id="search" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="location guests" aria-label="Close">
         <!-- Icono Search de google Icons -->
           <span class="material-symbols-outlined pointer">
@@ -116,6 +117,7 @@ const offCanvas = () => {
           </span>
         </a>
       </div>
+      <!-- Nota -->
     </form>
   `;
   offCanvasBody.appendChild(div);
