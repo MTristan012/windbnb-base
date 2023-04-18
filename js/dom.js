@@ -106,10 +106,13 @@ const offCanvas = () => {
       </div>
       <!-- Nota -->
       <div class="d-flex justify-content-center">
-        <a class="btn" href="#" type="submit" id="search" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="location guests" aria-label="Close">
+        <a class="btn btn-danger" href="#" type="submit" id="search" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="location guests" aria-label="Close">
         <!-- Icono Search de google Icons -->
-          <span class="material-symbols-outlined text-danger p-3 pointer">
+          <span class="material-symbols-outlined pointer">
             search
+          </span>
+          <span>
+            Search
           </span>
         </a>
       </div>
