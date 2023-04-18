@@ -60,15 +60,15 @@ const offCanvas = () => {
   div.innerHTML = `
     <form class=" align-items-center div_0">
       <!-- Nota -->
-      <div class="col-md-6 justify-content-between div_1">
-        <div class="btn form-floating border border-1 col-12 col-md-6" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">
+      <div class="col-md-12 div_1">
+        <div class="btn form-floating border border-1 col-12 col-md-12 div_1_1" data-bs-toggle="collapse" href="#location" role="button" aria-expanded="false" aria-controls="location">
           <p type="label" class="text-start m-0" for="">Location</p>
-          <input class="border border-0 fs-6 " value="Add Location" id="offCanvasLocation" disabled>
+          <input class="border border-0 fs-6 justify-content-md-start" value="Add Location" id="offCanvasLocation" disabled>
           </input>
         </div>
-        <div class="btn form-floating border border-1 col-12 col-md-6" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">
+        <div class="btn form-floating border border-1 col-12 col-md-12 div_1_2" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">
           <p type="label" class="text-start m-0" for="">Guests</p>
-          <input class="border border-0 fs-6 pe-5" value="Add Guests" id="offCanvasGuests" disabled>
+          <input class="border border-0 fs-6" value="Add Guests" id="offCanvasGuests" disabled>
           </input> 
         </div>
       </div>
@@ -106,7 +106,7 @@ const offCanvas = () => {
         </div>
       </div>
       <!-- Nota -->
-      <div class="d-flex justify-content-center col-md-4 div_3">
+      <div class="d-flex justify-content-center col-md-12 p-md-1 div_3">
         <a class="btn btn-danger" href="#" type="submit" id="search" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="location guests" aria-label="Close">
         <!-- Icono Search de google Icons -->
           <span class="material-symbols-outlined pointer">
