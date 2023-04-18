@@ -66,7 +66,7 @@ const offCanvas = () => {
           <input class="border border-0 fs-6 justify-content-md-start" value="Add Location" id="offCanvasLocation" disabled>
           </input>
         </div>
-        <div class="btn form-floating border border-1 col-12 col-md-12 div_1_2" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">
+        <div class="btn form-floating rounded-sm-bottom border border-1 col-12 col-md-12 div_1_2" data-bs-toggle="collapse" href="#guests" role="button" aria-expanded="false" aria-controls="guests">
           <p type="label" class="text-start m-0" for="">Guests</p>
           <input class="border border-0 fs-6" value="Add Guests" id="offCanvasGuests" disabled>
           </input> 
