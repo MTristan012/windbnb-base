@@ -56,7 +56,7 @@ const generateCard = (card) => {
 const offCanvas = () => {
   const offCanvasBody = $("#offCanvasBody");
   const div = newE("div");
-  div.className = "g-col-12";
+  div.className = "container";
   div.innerHTML = `
     <form class="row align-items-center">
       <div class="col.12">
